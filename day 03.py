@@ -4,6 +4,9 @@ import random
 drinks = ['위스키','와인','소주','고량주']
 drinks_food = ['초콜릿','치즈','삼겹살','양꼬치']
 
+def print_menu(n):
+    print(f'{drinks[n]}에 어울리는 안주는 {drinks_food[n]}입니다.')
+
 drinks.append('사케')
 drinks.append('위스키')
 drinks.append('데킬라')
@@ -18,9 +21,11 @@ for i in range(len(drinks)):
 #f'다음 술중에 고르세요.\n 1){drinks[0]}  2){drinks[1]}  3){drinks[2]}  4){drinks[3]}  5){drinks[4]}  6)랜덤 추천  7) 종료 : '
 menu_list = menu_list + f'{len(drinks)+1}) 랜덤 추천 {len(drinks)+2}) 종료 : '
 while True:
-    menu = input(menu_list)
-    if menu == i+1 :
-        print(f'{drinks[i]}에 어울리는 안주는 {drinks_food[i]} 입니다')
+    menu = int(input(menu_list))
+    if 1 <= menu < len(drinks):
+        print_menu(menu-1)
+    #if menu == int(i+1) :
+    #    print(f'{drinks[i]}에 어울리는 안주는 {drinks_food[i]} 입니다')
 
     elif menu == len(drinks)+1 :
         random = random.randint(0,len(drinks)-1)
