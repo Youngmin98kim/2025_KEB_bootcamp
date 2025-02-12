@@ -1,42 +1,28 @@
-import math
-#print(exp(1)) #error
-print(math.exp(1))
-print(math.e)
-print(math.log(16,2))
+import random
+drinks = ['위스키','와인','소주','고량주']
+drinks_food = ['초콜릿','치즈','삼겹살','양꼬치']
 
-#지수가 음수 ?
-def my_power(b:float,e:float) -> float:
-    """
-    A function that takes a base and an exponent as input, calculates the power (exponentiation),
-    and returns the result as a floating-point number.
-    :param b: base number
-    :param e: exponent
-    :return: the power result in the form of a real number
-    """
-    result = 1
+drinks.append('사케')
+drinks.append('위스키')
 
-    if e < 0:
-        b= 1/b
-        e = e * -1
-        #return 1 / my_power(b, -e)
+drinks_food.append('광어회')
+drinks_food.append('낙곱새')
 
-    i = int(e)
-    f = e - i
-
-    for _ in range(i): #for k in range(e)
-        result = result * b
-
-    if f > 0:
-        result = result * math.exp(f*math.log(b))
-
-    return result
-
-
-print(my_power(2,9))
-print(my_power(16,0.5))
-print(my_power(10,3))
-print(my_power(25,-2))
-
-#포크 : 다른 사람의 원격 repository 를 내 것으로 떠오는 것. 떠먹는 티라미수 pull request 받으면 코드 리뷰를 하고 거기에 최종 merge
-#다른 사람이 내 repository를 떠가서 수정해서 반영해달라고 request 해온 걸 수락하면 원본에 반영됨.
-#pull 원격에 있는 걸 내꺼로 다운, push는 원격에 올림.
+while True:
+    menu = input(f'다음 술중에 고르세요.\n 1){drinks[0]}  2){drinks[1]}  3){drinks[2]}  4){drinks[3]}  5){drinks[4]}  6)랜덤 추천  7) 종료 : ')
+    if menu == '1':
+        print(f'{drinks[0]}에 어울리는 안주는 {drinks_food[0]} 입니다')
+    elif menu == '2':
+        print(f'{drinks[1]}에 어울리는 안주는 {drinks_food[1]} 입니다')
+    elif menu == '3':
+        print(f'{drinks[2]}에 어울리는 안주는 {drinks_food[2]} 입니다')
+    elif menu == '4':
+        print(f'{drinks[3]}에 어울리는 안주는 {drinks_food[3]} 입니다')
+    elif menu == '5':
+        print(f'{drinks[4]}에 어울리는 안주는 {drinks_food[4]} 입니다')
+    elif menu == '6':
+        random_drink = random.choice(drinks)
+        print(f'{random_drink}에 어울리는 안주는 {drinks_food[drinks.index(random_drink)]} 입니다')
+    elif menu == '7':
+        print(f'다음에 또 오세요')
+        break
