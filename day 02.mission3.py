@@ -1,4 +1,5 @@
 # 거듭제곱 함수
+import math
 def my_power(b,e) -> float:
     """
     A function that takes a base and an exponent as input, calculates the power (exponentiation),
@@ -36,3 +37,8 @@ while n != 0:
 
 
 print(my_power(2,10))
+
+#
+print(exp(1)) #error
+print(math.exp(1))
+print(math.e)
