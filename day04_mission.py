@@ -31,10 +31,12 @@ def factorial_repitition(n) -> int:
         result = result * i
     return result
 
-#int(description(factorial_repitition(int(input())))) : 함수를 감싸는 것이 아니라 반환값을 감싸게 되어 오류
-#@description만 씌운 상태에서 time_decorator를 씌우려면 : dec = time_decorator(factorial_repititions())
+#description(factorial_repitition(int(input()))) : 함수를 감싸는 것이 아니라 반환값을 감싸게 되어 오류, 변수 선언을 해줘야 함.
+#@description만 씌운 상태에서 time_decorator를 씌우려면 : dec = time_decorator(factorial_repitition), input 은 분리
 number = int(input())
-print(f'{number} = {factorial_repitition(number)}')
+t = description(time_decorator(factorial_repitition))
+print(f"{number}! = {t(number)}")
+
 def squares(n):
     """
     제곱 함수

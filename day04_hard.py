@@ -9,20 +9,6 @@ def time_decorator(func):
         print(f'실행 시간 : {e-s}sec')
         return r
     return wrapper
-
-#@time_decorator
-def factorial_repitition(n) -> int:
-    result = 1
-    for i in range(2,n+1):
-        result = result * i
-    return result
-
-number = int(input())
-ft = time_decorator(factorial_repitition) #혹은 @time_decorator
-print(f"{number}! = {ft(number)}")
-number = int(input())
-print(f"{number}! = {factorial_repitition(number)}")
-
 # decorator
 def description(f):  # closure
     def inner(*args):
@@ -33,14 +19,36 @@ def description(f):  # closure
 
     return inner
 
+@time_decorator
+@description
+def factorial_repitition(n) -> int:
+    """
+    팩토리얼 함수
+    """
+    result = 1
+    for i in range(2,n+1):
+        result = result * i
+    return result
 
+# number = int(input())
+# ft = time_decorator(factorial_repitition) #혹은 @time_decorator
+# print(f"{number}! = {ft(number)}")
+# number = int(input())
+# print(f"{number}! = {factorial_repitition(number)}")
+
+
+#rint(description(factorial_repitition(int(input()))))
+
+number = int(input())
+print(f'{number} = {factorial_repitition(number)}')
 def squares(n):
     """
     제곱 함수
     """
     return n * n
 
-@description
+
+#@description
 def power(b, e):
     """
     거듭제곱 함수
@@ -49,16 +57,12 @@ def power(b, e):
     for _ in range(e):
         result = result * b
     return result
+#
+# print(squares(7))
+#f1 = time_decorator(power(8)) #decorator가 먼저 동작 (이름과 설명), 인수 받아서 결과 return
+#print(f1(9))
 
-print(squares(7))
-f1 = description(squares)
-print(f1(9))
-print(power(2, 10))
-
-
-# f2 = description(power)
-# print(f2(2, 10))
-
+# print(power(2, 10))
 # print(squares(7))
 # print(squares.__doc__)
 
