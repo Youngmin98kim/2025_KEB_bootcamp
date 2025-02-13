@@ -1,5 +1,7 @@
 #assignment
 #메뉴 삭제 추가에 대응되는 코드를 추가 : 반복문, len함수, input 에서 문자열 결합
+#가격을 합산해서 영수증을 발급하기
+ #ex. d_s_p = {"위스키":['초콜릿',50_000],,}
 import random
 drinks = ['위스키','와인','소주','고량주']
 drinks_food = ['초콜릿','치즈','삼겹살','양꼬치']
@@ -22,7 +24,7 @@ for i in range(len(drinks)):
 menu_list = menu_list + f'{len(drinks)+1}) 랜덤 추천 {len(drinks)+2}) 종료 : '
 while True:
     menu = int(input(menu_list))
-    if 1 <= menu < len(drinks):
+    if 1 <= menu < len(drinks): #비교연산자
         print_menu(menu-1)
     #if menu == int(i+1) :
     #    print(f'{drinks[i]}에 어울리는 안주는 {drinks_food[i]} 입니다')
