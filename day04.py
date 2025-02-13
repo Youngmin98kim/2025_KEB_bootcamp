@@ -60,5 +60,6 @@ while True:
                count_prices[num] += 1
            else:
                count_prices[num] =1
+       sum_prices()
        print(f'{sum_prices()} 다음에 또 오세요.')
        break
