@@ -2,9 +2,15 @@
 #메뉴 삭제 추가에 대응되는 코드를 추가 : 반복문, len함수, input 에서 문자열 결합
 #가격을 합산해서 영수증을 발급하기
  #ex. d_s_p = {"위스키":['초콜릿',50_000],,}
+# d_s_p = {"위스키":['초콜릿',50_000]}
+#print(d_s_p["위스키"]) #초콜릿, 오만원
+#print(d_s_p["위스키"][1]) #오만원
+
 import random
+
 drinks = ['위스키','와인','소주','고량주']
 drinks_food = ['초콜릿','치즈','삼겹살','양꼬치']
+prices = [50000,30000,5000,7500]
 
 def print_menu(n):
     print(f'{drinks[n]}에 어울리는 안주는 {drinks_food[n]}입니다.')
@@ -16,6 +22,10 @@ drinks.append('데킬라')
 drinks_food.append('광어회')
 drinks_food.append('낙곱새')
 drinks_food.append('소금')
+
+prices.append(25000)
+prices.append(35000)
+prices.append(25000)
 
 menu_list = '다음 술 중에 고르세요.\n' 
 for i in range(len(drinks)):
