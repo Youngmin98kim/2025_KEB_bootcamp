@@ -18,10 +18,11 @@ def factorial_repitition(n) -> int:
     return result
 
 number = int(input())
-ft = time_decorator(factorial_repitition)
+ft = time_decorator(factorial_repitition) #혹은 @time_decorator
 print(f"{number}! = {ft(number)}")
 number = int(input())
 print(f"{number}! = {factorial_repitition(number)}")
+
 # decorator
 def description(f):  # closure
     def inner(*args):
