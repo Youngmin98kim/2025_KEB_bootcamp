@@ -1,4 +1,5 @@
 #SOLID
+import time
 
 def factorial_repitition(n) -> int:
     result = 1
@@ -7,4 +8,7 @@ def factorial_repitition(n) -> int:
     return result
 
 number = int(input())
+s = time.time()
 print(f"{number}! = {factorial_repitition(number)}")
+e = time.time()
+print(e-s)
