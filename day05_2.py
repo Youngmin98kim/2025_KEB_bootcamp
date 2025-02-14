@@ -70,3 +70,33 @@ def fibo_loop(n) -> int : #시간 엄청 오래걸림.
     return n_list[n]
 n=int(input())
 print(fibo_loop(n))
+
+def explosion(n) -> int :
+    """
+    재귀함수를 이용한 함수
+    :param n:
+    :return:
+    """
+    if n<=0:
+        return
+    print(n, end=" ")  # 현재 숫자 출력
+    explosion(n - 1)  # 재귀 호출
+
+def countdown_loop(n):
+    for i in range(n, -1, -1):
+        if i ==0:
+            print('펑')
+    else :
+        print(i)
+
+countdown_loop(int(input()))
+
+def countdown_recursion(n):
+    if n<0:
+        return
+    if n==0:
+        print("펑")
+    else:
+        print(n)
+    countdown_recursion(n-1) #끝내지 않으면 계속 loop가 돌아가므로 들여쓰기 x
+
