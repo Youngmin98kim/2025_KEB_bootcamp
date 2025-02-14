@@ -92,7 +92,7 @@ def countdown_loop(n):
 countdown_loop(int(input()))
 
 def countdown_recursion(n):
-    if n<0:
+    if n<0:#종료조건
         return
     if n==0:
         print("펑")
